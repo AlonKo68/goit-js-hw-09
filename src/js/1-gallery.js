@@ -59,4 +59,14 @@ function createMarkup(arr) {
     </li>
     `).join('');
 }
-list.insertAdjacentHTML('afterbegin', createMarkup(images))
+list.insertAdjacentHTML('afterbegin', createMarkup(images));
+
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
+
+});

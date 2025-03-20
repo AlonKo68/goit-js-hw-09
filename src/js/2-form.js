@@ -32,9 +32,7 @@ function handlerSubmit(evt) {
 }
 
 const getForm = localStorage.getItem(LS_KEY);
-console.log(getForm);
 const parseItem = JSON.parse(getForm) ?? "";
-console.log(parseItem);
 
 form.email.value = parseItem.email ?? '';
 form.message.value = parseItem.message ?? '';

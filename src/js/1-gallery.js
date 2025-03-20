@@ -48,25 +48,26 @@ const images = [
     },
 ];
 
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+
 const list = document.querySelector('.gallery');
+console.log(list);
 
 function createMarkup(arr) {
     return arr.map(({ preview, original, description }) => `
     <li class="gallery-item">
-        <a class="gallery-link" href="${original}">
-            <img class="gallery-image" src="${preview}" alt="${description}"/>
-        </a>
+    <a class="gallery-link" href="${original}">
+    <img class="gallery-image" src="${preview}" alt="${description}"/>
+    </a>
     </li>
     `).join('');
 }
 list.insertAdjacentHTML('afterbegin', createMarkup(images));
 
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import SimpleLightbox from 'simplelightbox';
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
-
 });
